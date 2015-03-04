@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <td>
+      <h3>Title</h3>
+    </td>
+  </tr>
+  <% @posts.each do |p| %>
+    <tr>
+      <td>
+        <%= link_to p.title, p %>
+      </td>
+    </tr>
+  <% end %>
+</table>
