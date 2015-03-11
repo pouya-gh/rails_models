@@ -1,5 +1,5 @@
 ModelTest::Application.routes.draw do
-  resources :posts, only: [:index, :show, :new, :create, :edit, :update]
+  resources :posts
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

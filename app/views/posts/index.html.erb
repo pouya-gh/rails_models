@@ -8,6 +8,9 @@
     <td>
       Edit post
     </td>
+    <td>
+      Delete post
+    </td>
   </tr>
   <% @posts.each do |p| %>
     <tr>
@@ -16,6 +19,9 @@
       </td>
       <td>
         <%= link_to "Edit", edit_post_path(p.id) %>
+      </td>
+      <td>
+        <%= link_to "Delete", p, method: :delete, data: { confirm: "Really?" } %>
       </td>
     </tr>
   <% end %>
