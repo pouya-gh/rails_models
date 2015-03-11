@@ -1,13 +1,21 @@
+<%= link_to "New post", new_post_path %>
+
 <table>
   <tr>
     <td>
       <h3>Title</h3>
+    </td>
+    <td>
+      Edit post
     </td>
   </tr>
   <% @posts.each do |p| %>
     <tr>
       <td>
         <%= link_to p.title, p %>
+      </td>
+      <td>
+        <%= link_to "Edit", edit_post_path(p.id) %>
       </td>
     </tr>
   <% end %>
