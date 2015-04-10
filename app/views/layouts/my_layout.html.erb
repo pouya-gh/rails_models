@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield :title %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= link_to "Posts", posts_path %>
+  |
+  <%= yield :edit_post_link %>
+  |
+  <%= yield :delete_post_link %>
+  <p>
+    ________________________________
+  </p>
+  <%= yield %>
+
+</body>
+</html>

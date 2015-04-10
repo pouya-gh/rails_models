@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  layout 'layouts/my_layout', only: [:show]
+
   def index
     @posts = Post.all
   end
