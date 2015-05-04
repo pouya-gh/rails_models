@@ -17,6 +17,7 @@ class PostsController < ApplicationController
     @post = Post.new
     @post.title = params[:post][:title]
     @post.body = params[:post][:body]
+    @post.user_id = params[:post][:user_id]
     @post.save
     redirect_to posts_path
   end
@@ -30,6 +31,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.title = params[:post][:title]
     @post.body = params[:post][:body]
+    @post.user_id = params[:post][:user_id]
     @post.save
     redirect_to posts_path
   end
