@@ -1,5 +1,8 @@
 ModelTest::Application.routes.draw do
-  resources :posts
+  resources :posts, only: [:index, :show, :destroy]
+  scope '/user' do
+    resources :posts, only: [:new, :create, :edit, :update]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
