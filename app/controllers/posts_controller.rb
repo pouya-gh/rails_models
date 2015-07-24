@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   layout 'layouts/my_layout', only: [:show]
   before_filter :find_post_by_id, only: [:show, :edit, :update, :destroy]
+  before_filter :check_signed_in, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -47,5 +48,13 @@ class PostsController < ApplicationController
 
   def find_post_by_id
     @post = Post.find(params[:id])
+  end
+
+  def check_signed_in
+    if !cookies[:user_id]
+      unless User.find_by_id(cookies[:user_id])
+        redirect_to root_path
+      end
+    end
   end
 end
