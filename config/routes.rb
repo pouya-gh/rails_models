@@ -1,4 +1,5 @@
 ModelTest::Application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
   resources :posts, only: [:index, :show, :destroy, :create, :update]
   scope '/user' do
     resources :posts, only: [:new, :edit]
@@ -7,7 +8,7 @@ ModelTest::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'posts#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
