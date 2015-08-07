@@ -12,7 +12,7 @@
   <%= yield :edit_post_link %>
   |
   <%= yield :delete_post_link %>
-  <% if cookies[:user_id] %>
+  <% if signed_in? %>
   | <%= link_to "Sign out", session_path(1), method: "Delete" %>
   <% else %>
   | <%= link_to "Sign in", new_session_path %>

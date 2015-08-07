@@ -51,10 +51,8 @@ class PostsController < ApplicationController
   end
 
   def check_signed_in
-    if !cookies[:user_id]
-      unless User.find_by_id(cookies[:user_id])
-        redirect_to root_path
-      end
+    if !signed_in?
+      redirect_to root_path
     end
   end
 end

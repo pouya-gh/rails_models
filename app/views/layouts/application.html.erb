@@ -8,7 +8,7 @@
 </head>
 <body>
 <%= link_to "Posts", posts_path %>
-<% if cookies[:user_id] %>
+<% if signed_in? %>
 | <%= link_to "Sign out", session_path(1), method: "Delete" %>
 <% else %>
 | <%= link_to "Sign in", new_session_path %>
