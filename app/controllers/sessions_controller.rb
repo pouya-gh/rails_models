@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by_name(params[:name])
     if user && user.password == params[:password]
-      cookies[:user_id] = user.id
+      sign_in_user(user)
       redirect_to posts_path
     else
       render :new
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    cookies.delete(:user_id)
+    sign_out
     redirect_to posts_path
   end
 end
