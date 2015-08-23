@@ -12,6 +12,12 @@ group :deployment do
   gem 'pg'
 end
 
+group :development do
+  gem 'mysql'
+end
+
+gem 'figaro', '1.0.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
