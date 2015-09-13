@@ -1,3 +1,7 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :name, :url
+
+  def url
+    "/users/#{object.id}"
+  end
 end
