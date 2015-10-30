@@ -7,16 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= link_to "Posts", posts_path %>
-  |
-  <%= yield :edit_post_link %>
-  |
-  <%= yield :delete_post_link %>
-  <% if signed_in? %>
-  | <%= link_to "Sign out", session_path(1), method: "Delete" %>
-  <% else %>
-  | <%= link_to "Sign in", new_session_path %>
-  <% end %>
+  <div class="menu">
+    <%= link_to "Posts", posts_path %>
+    |
+    <%= yield :edit_post_link %>
+    |
+    <%= yield :delete_post_link %>
+    <% if signed_in? %>
+    | <%= link_to "Sign out", session_path(1), method: "Delete" %>
+    <% else %>
+    | <%= link_to "Sign in", new_session_path %>
+    <% end %>
+  </div>
+  <br/>
+  <button class="menu-toggle-btn" type="button">Toggle menu</button> 
   <p>
     ________________________________
   </p>
