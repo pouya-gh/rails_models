@@ -4,3 +4,5 @@
 
 toggleMenu = ()->
   $(".menu").fadeToggle(1000)
+
+window.toggleMenu = toggleMenu
