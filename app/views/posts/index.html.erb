@@ -21,6 +21,9 @@
         <%= link_to p.title, p %>
       </td>
       <td>
+        <a href="#" data-preview="<%= p.body[0..19] %>">Preview</a>
+      </td>
+      <td>
         <%= link_to "Edit", edit_post_path(p.id) %>
       </td>
       <td>
